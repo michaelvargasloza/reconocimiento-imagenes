@@ -46,7 +46,8 @@ function loadLabeledImages() {
         descriptions.push(detections.descriptor)
       }
 
-      return new faceapi.LabeledFaceDescriptors(label, descriptions)
+      //return new faceapi.LabeledFaceDescriptors(label, descriptions)
+      document.body.append(label, descriptions)
     })
   )
 }
