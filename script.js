@@ -1,5 +1,6 @@
 const imageUpload = document.getElementById('imageUpload')
 
+//Revisar las rutas, por lo general aqui existen problemas.
 Promise.all([
   faceapi.nets.faceRecognitionNet.loadFromUri('/reconocimiento-imagenes/models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('/reconocimiento-imagenes/models'),
@@ -46,8 +47,8 @@ function loadLabeledImages() {
         descriptions.push(detections.descriptor)
       }
 
-      //return new faceapi.LabeledFaceDescriptors(label, descriptions)
-      document.body.append(label, descriptions)
+      return new faceapi.LabeledFaceDescriptors(label, descriptions)
+      //document.body.append(label, descriptions)
     })
   )
 }
